@@ -1,0 +1,34 @@
+<!doctype html>
+<head>
+  <title>PawTalk</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<style>
+  body 
+  {
+    font-family: 'Inter', sans-serif;
+    background-image:url("{{url_for('static', filename='cat.jpg')}}");
+    font-family: Cambria, serif;
+  }
+</style>
+</head>
+<body>
+      <h1 style="color: rgb(205, 0, 0); font-size: 100px; font-weight: 1500; text-decoration: underline;">
+        Pet Query
+      </h1>
+      <br><br><br><br>
+      <h1 style="color: rgb(0, 0, 0); font-size: 25px; font-weight: 1500;">
+        Connect. Share. Care — Your friendly neighborhood pet community.<br><br>
+        Ask questions, share stories, and bond over your love for pets.
+      </h1>
+      <br><br><br><br><br><br>
+      <a href="{{ url_for('petquery') }}" class="overlay" style="text-decoration: underline;">
+        <h1 style="color: rgb(135, 7, 7); font-size: 50px; font-weight: 900;">
+          Talk to other 
+          Pet Owners
+        </h1>
+      </a>
+      
+      
+
+</body>
+</html>

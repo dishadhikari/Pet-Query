@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <title>Pet Query</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<style>
+  body {
+    background-color:rgb(249, 156, 156);
+  }
+
+</style>
+</head>
+<body>
+    <h1>Ask your question</h1>
+    <form action="{{url_for('add')}}" method="POST">
+        <input type="text" name="question" placeholder="Type your question here...">
+        <input type="submit" value="Post Question">
+    </form>
+
+    {% if message %}
+        <div class="message" style="background-color:color: rgb(135, 7, 7); color: rgb(255, 255, 255);">{{message}}</div>
+    {% endif %}
+
+    <h1>Popular Questions</h1>
+    <ul>
+        {% for question in questions %}
+            <li><a href="{{url_for('viewq', qid=question['qid'])}}">{{question['title']}}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
